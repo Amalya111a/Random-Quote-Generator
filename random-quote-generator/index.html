@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Random Quote Generator with Personalization</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+  <main class="container">
+    <h1>Random Quote Generator</h1>
+
+    <fieldset>
+      <legend>Your favorite categories</legend>
+      <div class="chips" id="categories"></div>
+    </fieldset>
+
+    <div class="row">
+      <label for="lang">Language</label>
+      <select id="lang">
+        <option value="en">English</option>
+        <option value="hy">Հայերեն</option>
+        <option value="es">Español</option>
+      </select>
+    </div>
+
+    <div class="quote-box" id="quote-box" aria-live="polite">
+      <p class="quote-text" id="quote-text">Loading quote...</p>
+      <p class="quote-author" id="quote-author"></p>
+      <p class="source" id="source"></p>
+    </div>
+
+    <div class="btns">
+      <button id="new-btn">New Quote</button>
+      <button id="copy-btn" class="alt">Copy</button>
+      <button id="fav-btn" class="fav" aria-pressed="false">♡ Favorite</button>
+    </div>
+    <div class="btns share">
+      <button data-share="facebook">Facebook</button>
+      <button data-share="whatsapp">WhatsApp</button>
+      <button data-share="native" id="native-share" hidden>More...</button>
+    </div>
+    <div class="status" id="status" role="status"></div>
+
+    <section>
+      <h2>Contribute your own quote</h2>
+      <input type="text" id="c-text" placeholder="Quote text..." maxlength="300">
+      <input type="text" id="c-author" placeholder="Author name..." maxlength="60">
+      <select id="c-category" aria-label="Category of your quote"></select>
+      <button id="add-btn">Add to database</button>
+    </section>
+
+    <section>
+      <h2>My favorite quotes</h2>
+      <div id="fav-list"></div>
+    </section>
+
+  </main>
+
+  <script src="script.js" defer></script>
+</body>
+
+</html>
